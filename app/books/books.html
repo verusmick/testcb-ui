@@ -1,11 +1,17 @@
-<p>Lista de Libros</p>
-<table>
-    <tr><th>Titulo</th><th>Edicion</th><th>Autores</th></tr>
+<div>
+    <p>Lista de Libros</p>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Titulo</th>
+            <th>Edicion</th>
+            <th>Autores</th>
+        </tr>
 
-    <tr ng-repeat="book in vm.booksList">
-        <td>{{book.title}}</td>
-        <td>{{book.edition_date | date : 'M/d/yy'}}</td>
-        <td>{{book.authors}}</td>
-        <td><a href="#!/mngBook/{{book.book_id}}">Editar</a></td>
-    </tr>
-</table>
+        <tr ng-repeat="book in vm.booksList">
+            <td>{{book.title}}</td>
+            <td>{{book.edition_date | date : 'M/d/yy'}}</td>
+            <td>{{vm.arrayToString(book.authors)}}</td>
+            <td><a href="#!/mngBook/{{book.book_id}}">Editar</a></td>
+        </tr>
+    </table>
+</div>

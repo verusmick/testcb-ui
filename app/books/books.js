@@ -14,8 +14,16 @@ angular.module('myApp.books', ['ngRoute'])
     var vm = this;
     vm.booksList = [];
     vm.messaje = 'test';
+    vm.searchAutores = '';
+    vm.editionFilter = '';
+
+    vm.arrayToString = arrayToString;
 
     initialize();
+
+    function arrayToString(string) {
+      return string.join(", ");
+    }
 
     function initialize() {
       BooksService.getBooks().then(function (response) {
