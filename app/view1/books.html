@@ -1,1 +1,10 @@
-<p> {{vm.messaje}}</p>
+<p>Lista de Libros</p>
+<table>
+    <tr><th>Titulo</th><th>Edicion</th><th>Autores</th></tr>
+
+    <tr ng-repeat="book in vm.booksList">
+        <td>{{book.title}}</td>
+        <td>{{book.edition_date | date : 'M/d/yy'}}</td>
+        <td>{{book.authors}}</td>
+    </tr>
+</table>

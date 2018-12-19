@@ -6,9 +6,9 @@ angular.module('myApp', [
   'myApp.books',
   'myApp.view2',
   'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-
-  $routeProvider.otherwise({redirectTo: '/books'});
-}]);
+])
+  .constant('API_ENDPOINT', 'http://localhost:3000')
+  .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    $locationProvider.hashPrefix('!');
+    $routeProvider.otherwise({redirectTo: '/books'});
+  }]);
