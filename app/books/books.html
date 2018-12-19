@@ -1,6 +1,6 @@
 <div>
-    <p>Lista de Libros</p>
-    <table class="table table-bordered table-striped">
+    <h3>Lista de Libros</h3>
+    <table class="table table-bordered table-striped" ng-if="vm.booksList.length>0">
         <tr>
             <th>Titulo</th>
             <th>Edicion</th>
@@ -14,4 +14,5 @@
             <td><a href="#!/mngBook/{{book.book_id}}">Editar</a></td>
         </tr>
     </table>
+    <p style="color: red" ng-if="vm.booksList.length ===0">No existen libros registrados</p>
 </div>
