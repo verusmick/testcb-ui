@@ -4,7 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.books',
-  'myApp.view2',
+  'myApp.mngBook',
   'myApp.version'
 ])
   .constant('API_ENDPOINT', 'http://localhost:3000')

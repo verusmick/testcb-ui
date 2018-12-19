@@ -4,7 +4,7 @@ angular.module('myApp.books', ['ngRoute'])
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/books', {
-      templateUrl: 'view1/books.html',
+      templateUrl: 'books/books.html',
       controller: 'BooksCtrl',
       controllerAs: 'vm'
     });

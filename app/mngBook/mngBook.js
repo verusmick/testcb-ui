@@ -1,16 +1,16 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.mngBook', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2/:id', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl',
+  $routeProvider.when('/mngBook/:id', {
+    templateUrl: 'mngBook/mngBook.html',
+    controller: 'MngBookCtrl',
     controllerAs: 'vm'
   });
 }])
 
-.controller('View2Ctrl', ['MngBooksService','$routeParams', function(MngBooksService,$routeParams) {
+.controller('MngBookCtrl', ['MngBooksService','$routeParams', function(MngBooksService,$routeParams) {
   var vm = this;
   vm.authorsList= [];
   vm.book ={
