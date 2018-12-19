@@ -6,7 +6,9 @@ angular.module('myApp.books')
 
     return {
       createBooks: createBooks,
-      getAuthors:getAuthors
+      getAuthors:getAuthors,
+      getBookById:getBookById,
+      updateBookById:updateBookById
     };
 
     function createBooks(obj) {
@@ -17,6 +19,18 @@ angular.module('myApp.books')
 
     function getAuthors(){
       return $http.get(API_ENDPOINT + '/authors').then(function (response) {
+        return response.data;
+      });
+    }
+
+    function getBookById(bookId){
+      return $http.get(API_ENDPOINT + '/books/'+bookId).then(function (response) {
+        return response.data;
+      });
+    }
+
+    function updateBookById(obj){
+      return $http.put(API_ENDPOINT + '/books/'+obj.bookId, obj).then(function (response) {
         return response.data;
       });
     }

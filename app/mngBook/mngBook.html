@@ -1,5 +1,5 @@
 <div>
-  <h2>Agregar</h2>
+  <h2>{{vm.editFlagBook? 'Modificar':'Agregar'}}</h2>
     <label>Nombre:
       <input type="text" ng-model="vm.book.title" />
     </label><br />
@@ -18,7 +18,13 @@
     <input type="button"
            ng-click="vm.createBook()"
            ng-disabled="!vm.book.title || !vm.book.editionDateTime"
-           value="Guardar" />
+           ng-if="!vm.editFlagBook"
+           value="Crear" />
 
-    <input type="button" ng-click="reset()" value="Cancelar" />
+  <input type="button"
+         ng-click="vm.updateBook()"
+         ng-disabled="!vm.book.title || !vm.book.editionDateTime"
+         ng-if="vm.editFlagBook"
+         value="Actualizar" />
+    <input type="button" ng-click="vm.goListBooks()" value="Cancelar" />
 </div>
