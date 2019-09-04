@@ -1,4 +1,4 @@
-Coding Bang Test - UI
+UI
 ==================
 
 Prerequisites
